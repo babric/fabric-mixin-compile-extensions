@@ -172,7 +172,17 @@ public class MixinMappingProviderTiny extends MappingProvider {
 
 		for (MappingTree.ClassMapping cls : tree.getClasses()) {
 			String fromClass = cls.getName(fromId);
+
+			if (fromClass == null) {
+				fromClass = cls.getSrcName();
+			}
+
 			String toClass = cls.getName(to);
+
+			if (toClass == null) {
+				toClass = fromClass;
+			}
+
 			classMap.put(fromClass, toClass);
 
 			for (MappingTree.FieldMapping field : cls.getFields()) {
