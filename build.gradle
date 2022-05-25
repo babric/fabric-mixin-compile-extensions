@@ -8,9 +8,9 @@ plugins {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-group = 'net.fabricmc'
+group = 'babric'
 archivesBaseName = project.name
-version = '0.5.0'
+version = '0.5.0-babric.1'
 
 def ENV = System.getenv()
 version = version + (ENV.GITHUB_ACTIONS ? "" : "+local")
