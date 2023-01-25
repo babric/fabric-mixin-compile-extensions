@@ -10,7 +10,7 @@ targetCompatibility = 1.8
 
 group = 'babric'
 archivesBaseName = project.name
-version = '0.5.0-babric.1'
+version = '0.6.0-babric.1'
 
 def ENV = System.getenv()
 version = version + (ENV.GITHUB_ACTIONS ? "" : "+local")
@@ -28,7 +28,8 @@ dependencies {
 	implementation ('net.fabricmc:sponge-mixin:0.11.4+mixin.0.8.5') {
 		transitive = false
 	}
-	implementation 'org.ow2.asm:asm:9.3'
+	implementation "org.ow2.asm:asm-tree:$asmVersion"
+	implementation "org.ow2.asm:asm:$asmVersion"
 }
 
 spotless {
